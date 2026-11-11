@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,7 +18,6 @@ public class CompraPasajes extends JFrame {
         JPanel panel = new JPanel(new GridLayout(0, 2, 10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
-        // Datos del pasajero
         panel.add(new JLabel("Nombre completo:"));
         txtNombre = new JTextField();
         panel.add(txtNombre);
@@ -32,7 +30,6 @@ public class CompraPasajes extends JFrame {
         txtFecha = new JTextField("DD/MM/AAAA");
         panel.add(txtFecha);
 
-        // Origen y destino
         panel.add(new JLabel("Lugar de origen:"));
         cmbOrigen = new JComboBox<>(new String[]{
             "Arequipa", "Lima", "Cusco", "Puno", "Tacna"
@@ -45,7 +42,6 @@ public class CompraPasajes extends JFrame {
         });
         panel.add(cmbDestino);
 
-        // Piso del bus
         panel.add(new JLabel("Piso del bus:"));
 
         JPanel panelPiso = new JPanel();
@@ -60,7 +56,6 @@ public class CompraPasajes extends JFrame {
         panelPiso.add(rbSegundoPiso);
         panel.add(panelPiso);
 
-        // Servicios opcionales
         panel.add(new JLabel("Servicios opcionales:"));
 
         JPanel panelServicios = new JPanel();
@@ -74,7 +69,6 @@ public class CompraPasajes extends JFrame {
         panelServicios.add(chkRevistas);
         panel.add(panelServicios);
 
-        // Calidad del servicio
         panel.add(new JLabel("Calidad del servicio:"));
 
         lstServicio = new JList<>(new String[]{
@@ -87,17 +81,14 @@ public class CompraPasajes extends JFrame {
 
         panel.add(new JScrollPane(lstServicio));
 
-        // Botones
         JButton btnMostrar = new JButton("Mostrar resumen");
         JButton btnLimpiar = new JButton("Limpiar");
 
         panel.add(btnMostrar);
         panel.add(btnLimpiar);
 
-        // Evento para mostrar resumen
         btnMostrar.addActionListener(e -> mostrarResumen());
 
-        // Evento para limpiar los campos
         btnLimpiar.addActionListener(e -> limpiarCampos());
 
         add(panel);
